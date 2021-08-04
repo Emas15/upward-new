@@ -3,11 +3,13 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
+import DropdownTeam from './DropdownTeam';
 import {NavbarBrand} from 'reactstrap'
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [dropdownTeam, setDropdownTeam] = useState(false)
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -19,6 +21,13 @@ function Navbar() {
       setDropdown(true);
     }
   };
+  const onJoinMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdownTeam(false);
+    } else {
+      setDropdownTeam(true);
+    }
+  };
 
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
@@ -27,13 +36,21 @@ function Navbar() {
       setDropdown(false);
     }
   };
+  
+  const onJoinMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdownTeam(false);
+    } else {
+      setDropdownTeam(false);
+    }
+  };
 
   return (
     <>
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <NavbarBrand>
-            <img src='assets/images/logo.png' height="150" width="150" alt="upward"/>
+            <img src='assets/images/logo.png' height="160px" width="128px" alt="upward"/>
           </NavbarBrand>
         </Link>
         <div className='menu-icon' onClick={handleClick}>
@@ -51,22 +68,36 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/services'
+              to='/about-us'
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Services <i className='fas fa-caret-down' />
+              About Us <i className='fas fa-caret-down' />
             </Link>
             {dropdown && <Dropdown />}
           </li>
           <li className='nav-item'>
             <Link
-              to='/products'
+              to='/team'
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Products
+              Team
             </Link>
+          </li>
+          <li
+            className='nav-item'
+            onMouseEnter={onJoinMouseEnter}
+            onMouseLeave={onJoinMouseLeave}
+          >
+            <Link
+              to='/join-us'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Join Us <i className='fas fa-caret-down' />
+            </Link>
+            {dropdownTeam && <DropdownTeam/>}
           </li>
           <li className='nav-item'>
             <Link
@@ -83,7 +114,7 @@ function Navbar() {
               className='nav-links-mobile'
               onClick={closeMobileMenu}
             >
-              Sign Up
+              Donate
             </Link>
           </li>
         </ul>
