@@ -1,10 +1,15 @@
 import React from 'react';
 import '../../App.css';
+import Header from '../Header';
+import image from '../../assets/images/banner1.png'
 
 export default function Home() {
   return (
     <>
-      <h1 className='home'>EPIC</h1>
+      <Header
+        title="Home"
+        image={image}
+      />
     </>
   );
 }
