@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MenuItemJoin } from './MenuItemJoin';
-import './Dropdown.css';
+import '../assets/css/Dropdown.css';
 import { Link } from 'react-router-dom';
 
 function DropdownTeam() {
