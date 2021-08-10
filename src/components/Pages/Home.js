@@ -6,10 +6,7 @@ import image from '../../assets/images/banner1.png'
 export default function Home() {
   return (
     <>
-      <Header
-        title="Home"
-        image={image}
-      />
+      
     </>
   );
 }

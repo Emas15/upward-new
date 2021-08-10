@@ -47,62 +47,62 @@ function Navbar() {
 
   return (
     <>
-      <nav className='navbar'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+      <nav className='Navbar'>
+        <Link to='/' className='Navbar-logo' onClick={closeMobileMenu}>
           <NavbarBrand>
             <img src='assets/images/logo.png' height="160px" width="128px" alt="upward"/>
           </NavbarBrand>
         </Link>
-        <div className='menu-icon' onClick={handleClick}>
+        <div className='Menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+        <ul className={click ? 'Nav-menu active' : 'Nav-menu'}>
+          <li className='Nav-item'>
+            <Link to='/' className='Nav-links' onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
           <li
-            className='nav-item'
+            className='Nav-item'
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
             <Link
               to='/about-us'
-              className='nav-links'
+              className='Nav-links'
               onClick={closeMobileMenu}
             >
               About Us <i className='fas fa-caret-down' />
             </Link>
             {dropdown && <Dropdown />}
           </li>
-          <li className='nav-item'>
+          <li className='Nav-item'>
             <Link
               to='/team'
-              className='nav-links'
+              className='Nav-links'
               onClick={closeMobileMenu}
             >
               Team
             </Link>
           </li>
           <li
-            className='nav-item'
+            className='Nav-item'
             onMouseEnter={onJoinMouseEnter}
             onMouseLeave={onJoinMouseLeave}
           >
             <Link
               to='/join-us'
-              className='nav-links'
+              className='Nav-links'
               onClick={closeMobileMenu}
             >
               Join Us <i className='fas fa-caret-down' />
             </Link>
             {dropdownTeam && <DropdownTeam/>}
           </li>
-          <li className='nav-item'>
+          <li className='Nav-item'>
             <Link
               to='/contact-us'
-              className='nav-links'
+              className='Nav-links'
               onClick={closeMobileMenu}
             >
               Contact Us
@@ -111,7 +111,7 @@ function Navbar() {
           <li>
             <Link
               to='/sign-up'
-              className='nav-links-mobile'
+              className='Nav-links-mobile'
               onClick={closeMobileMenu}
             >
               Donate
