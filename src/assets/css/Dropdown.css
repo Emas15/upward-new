@@ -13,6 +13,7 @@
   }
   
   .dropdown-menu li:hover {
+    display: block;
     background: #5cabff;
   }
   

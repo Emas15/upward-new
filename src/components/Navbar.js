@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import '../assets/css/Navbar.css';
 import Dropdown from './Dropdown';
 import DropdownTeam from './DropdownTeam';
-import {NavbarBrand} from 'reactstrap'
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -49,9 +48,7 @@ function Navbar() {
     <>
       <nav className='Navbar'>
         <Link to='/' className='Navbar-logo' onClick={closeMobileMenu}>
-          <NavbarBrand>
             <img src='assets/images/logo.png' height="160px" width="128px" alt="upward"/>
-          </NavbarBrand>
         </Link>
         <div className='Menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
